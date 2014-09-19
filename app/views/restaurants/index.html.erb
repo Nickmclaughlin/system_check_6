@@ -1,0 +1,9 @@
+<%= link_to 'Submit Restaurant', new_restaurant_path %>
+
+<h2>List of Restaurants</h2>
+
+<ol>
+  <% @restaurants.each do |restaurant| %>
+    <%= restaurant.name %>
+  <% end %>
+</ol>
