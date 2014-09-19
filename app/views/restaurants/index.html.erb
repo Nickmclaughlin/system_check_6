@@ -2,8 +2,21 @@
 
 <h2>List of Restaurants</h2>
 
-<ol>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Adress</th>
+    <th>City</th>
+    <th>State</th>
+  </tr>
+
   <% @restaurants.each do |restaurant| %>
-    <%= restaurant.name %>
+    <tr>
+      <td><%= restaurant.name %></td>
+      <td><%= restaurant.address %></td>
+      <td><%= restaurant.city %></td>
+      <td><%= restaurant.state %></td>
+      <td><%= link_to 'Show', restaurant_path(restaurant)  %></td>
+    </tr>
   <% end %>
-</ol>
+</table>

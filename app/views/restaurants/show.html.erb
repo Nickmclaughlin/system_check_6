@@ -1,0 +1,17 @@
+<h2><%= @restaurant.name %></h2>
+
+Address: <%= @restaurant.address %><br>
+City: <%= @restaurant.city %><br>
+State: <%= @restaurant.state %><br>
+Zip: <%= @restaurant.zip %><br>
+
+<% @restaurant.reviews.each do |review|  %>
+Rating: <%= review.rating %>
+Body: <%= review.body %>
+<% end %>
+
+
+<%= link_to 'See All restaurants', restaurants_path %>
+
+
+
