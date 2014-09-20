@@ -33,7 +33,7 @@ gem 'spring',        group: :development
 gem 'pry-rails', :group => :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'will_paginate'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 

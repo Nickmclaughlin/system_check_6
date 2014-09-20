@@ -3,19 +3,26 @@
 Address: <%= @restaurant.address %><br>
 City: <%= @restaurant.city %><br>
 State: <%= @restaurant.state %><br>
-Zip: <%= @restaurant.zip %><br>
+Zip: <%= @restaurant.zip %><br><br>
 
-<%= link_to 'Submit Review' , new_restaurant_review_path(@reviews) %>
-
+<%= link_to 'Submit New Review', new_restaurant_review_path(@restaurant) %>
 
 <h2>Reviews</h2>
+<table>
+  <tr>
+    <th>Rating</th>
+    <th>Review</th>
+  </tr>
 <% @reviews.each do |review|  %>
-  Rating: <%= review.rating %>
-  Review: <%= review.body %><br>
+  <tr>
+    <th><%= review.rating %></th>
+    <th><%= review.body %></th>
+  </tr>
 <% end %>
+</table>
 
 
-
+<br><br>
 
 <%= link_to 'See All Restaurants', restaurants_path %>
 
