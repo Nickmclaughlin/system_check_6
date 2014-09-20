@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @restaurant = Restaurant.find(params[:restaurant_id])
+    @review.restaurant = @restaurant
 
     if @review.save
       redirect_to @restaurant
@@ -14,7 +15,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Please fill out correctly."
       render 'new'
     end
-
   end
 
   def review_params
