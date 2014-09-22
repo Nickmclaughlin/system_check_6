@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
-    @posts = Restaurant.paginate(:page => params[:page], :per_page => 10)
+    @restaurants = Restaurant.all.limit(10)
   end
 
   def new
