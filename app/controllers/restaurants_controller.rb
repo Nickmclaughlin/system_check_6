@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.order("id DESC").limit(10)
+    @restaurants = Restaurant.order("id DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   def new
