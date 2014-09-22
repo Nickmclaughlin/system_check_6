@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all.limit(10)
+    @restaurants = Restaurant.order("id DESC").limit(10)
   end
 
   def new
@@ -25,6 +25,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :city, :state, :zip)
+    params.require(:restaurant).permit(:name, :address, :city, :state, :zip, :description, :category)
   end
 end
